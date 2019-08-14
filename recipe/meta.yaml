@@ -1,5 +1,5 @@
 {% set name = "varlink" %}
-{% set version = "30.2.0" %}
+{% set version = "30.3.0" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,7 +7,7 @@ package:
 
 source:
   url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: 6bc46625a96fe906ec040333b10576031cb6b503619054f40716a3b5f7ca31ea
+  sha256: f51a88197ded3de10dafdf6f7bb3f4d88216b8f068d78e7f0818a3fa71589c86
 
 build:
   number: 0
