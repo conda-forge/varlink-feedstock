@@ -8,6 +8,8 @@ package:
 source:
   url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
   sha256: f51a88197ded3de10dafdf6f7bb3f4d88216b8f068d78e7f0818a3fa71589c86
+  patches:
+  - patches/0001-remove-setuptools-requirement-from-setup.cfg.patch
 
 build:
   number: 0
