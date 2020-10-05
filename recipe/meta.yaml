@@ -1,19 +1,19 @@
 {% set name = "varlink" %}
-{% set version = "30.3.0" %}
+{% set version = "30.3.1" %}
 
 package:
-  name: "{{ name|lower }}"
-  version: "{{ version }}"
+  name: {{ name|lower }}
+  version: {{ version }}
 
 source:
-  url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: f51a88197ded3de10dafdf6f7bb3f4d88216b8f068d78e7f0818a3fa71589c86
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: 6311d4a67c6b2885ebfd3a0daa15bb52cdd2a9f0250f3e20fb9b3d0f9ccfd6bf
   patches:
-  - patches/0001-remove-setuptools-requirement-from-setup.cfg.patch
+    - patches/0001-remove-setuptools-requirement-from-setup.cfg.patch
 
 build:
-  number: 1
-  script: "{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv "
+  number: 0
+  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
 
 requirements:
   host:
@@ -29,15 +29,15 @@ test:
     - varlink
 
 about:
-  home: "https://github.com/varlink/python"
-  license: "Apache Software"
-  license_family: "APACHE"
-  license_file: "LICENSE"
-  summary: "Varlink"
-  doc_url: "https://varlink.github.io/python/"
-  dev_url: "https://github.com/varlink/python/"
+  home: https://github.com/varlink/python
+  license: Apache-2.0
+  license_family: APACHE
+  license_file: LICENSE
+  summary: Varlink
+  doc_url: https://varlink.github.io/python/
+  dev_url: https://github.com/varlink/python/
 
 extra:
   recipe-maintainers:
     - h-vetinari
-    - "4383"
+    - '4383'
