@@ -16,11 +16,9 @@ build:
 
 requirements:
   host:
-    - future  # [py27]
     - pip
     - python
   run:
-    - future  # [py27]
     - python
 
 test:
