@@ -1,4 +1,4 @@
-{% set version = "30.3.1" %}
+{% set version = "31.0.0" %}
 
 package:
   name: varlink
@@ -6,12 +6,12 @@ package:
 
 source:
   url: https://github.com/varlink/python/archive/{{ version }}.tar.gz
-  sha256: 0fd82802fb56a2964a8c3a322c58724ef4767a77c49c2bcca51bd96cddfdf791
+  sha256: 3c1f0ef71d887717e890a195811569535991863fa21da0c23c176d58f1732ebe
   patches:
     - patches/0001-remove-setuptools-requirement-from-setup.cfg.patch
 
 build:
-  number: 3
+  number: 0
   script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
 
 requirements:
