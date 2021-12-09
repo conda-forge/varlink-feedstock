@@ -10,9 +10,14 @@ source:
 
 build:
   number: 0
-  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
+  script:
+    - export SETUPTOOLS_SCM_PRETEND_VERSION="$PKG_VERSION"  # [not win]
+    - set SETUPTOOLS_SCM_PRETEND_VERSION=%PKG_VERSION%      # [win]
+    - {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv
 
 requirements:
+  build:
+    - setuptools_scm
   host:
     - pip
     - python
