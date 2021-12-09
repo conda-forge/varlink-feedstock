@@ -1,4 +1,4 @@
-{% set version = "30.3.1" %}
+{% set version = "31.0.0" %}
 
 package:
   name: varlink
@@ -6,15 +6,18 @@ package:
 
 source:
   url: https://github.com/varlink/python/archive/{{ version }}.tar.gz
-  sha256: 0fd82802fb56a2964a8c3a322c58724ef4767a77c49c2bcca51bd96cddfdf791
-  patches:
-    - patches/0001-remove-setuptools-requirement-from-setup.cfg.patch
+  sha256: 3c1f0ef71d887717e890a195811569535991863fa21da0c23c176d58f1732ebe
 
 build:
-  number: 3
-  script: '{{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv '
+  number: 0
+  script:
+    - export SETUPTOOLS_SCM_PRETEND_VERSION="$PKG_VERSION"  # [not win]
+    - set SETUPTOOLS_SCM_PRETEND_VERSION=%PKG_VERSION%      # [win]
+    - {{ PYTHON }} -m pip install . --no-deps --ignore-installed -vv
 
 requirements:
+  build:
+    - setuptools_scm
   host:
     - pip
     - python
