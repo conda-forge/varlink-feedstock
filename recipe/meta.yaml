@@ -9,7 +9,7 @@ source:
   sha256: 3c1f0ef71d887717e890a195811569535991863fa21da0c23c176d58f1732ebe
 
 build:
-  number: 1
+  number: 2
   script:
     - export SETUPTOOLS_SCM_PRETEND_VERSION="$PKG_VERSION"  # [not win]
     - set SETUPTOOLS_SCM_PRETEND_VERSION=%PKG_VERSION%      # [win]
